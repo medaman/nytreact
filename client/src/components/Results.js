@@ -6,7 +6,7 @@ const Results = (props) => {
       {
         props.results.map(article => {
           return (
-            <div key={article._id} className="card-body">
+            <div className="card-body">
               <div className="row">
                 <div className="col-sm-2">
                   <img alt="none" src={article.multimedia[0] ? "http://www.nytimes.com/" + article.multimedia[0].url : ""}/>
