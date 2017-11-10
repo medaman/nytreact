@@ -8,7 +8,10 @@ const articleSchema = new Schema({
   },
   url: String,
   date: Date,
-  imgUrl: String,
+  imgUrl: {
+    type: String,
+    unique: true
+  },
   author: String,
   snippet: String
 });
