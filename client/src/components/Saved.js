@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import API from "../utils/API";
-import SearchForm from "./SearchForm";
-import Results from "./Results";
 
 class Saved extends Component {
   state = {
@@ -34,36 +31,36 @@ class Saved extends Component {
 
   render() {
     return (
-      <div class="card">
-        <div class="card-header">
+      <div className="card">
+        <div className="card-header">
           Saved Articles
         </div>
         {
           this.state.saved.map(article => {
             return (
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-sm-2">
-                    <img alt="no-image" src={article.imgUrl}/>
+              <div className="card-body">
+                <div className="row">
+                  <div className="col-sm-2">
+                    <img alt="none" src={article.imgUrl}/>
                   </div>
-                  <div class="col-sm-10">
-                    <h4 class="card-title">
+                  <div className="col-sm-10">
+                    <h4 className="card-title">
                       {article.title}
                     </h4>
                     <h6>
                       {article.author}
                     </h6>
-                    <p class="card-text">
+                    <p className="card-text">
                       Published on: {article.date.split("T")[0]} at {article.date.split("T")[1].split(":")[0]}:{article.date.split("T")[1].split(":")[1]}
                     </p>
                     <p>
                       {article.snippet}
                     </p>
-                    <a href={article.url} target="_blank" class="btn btn-secondary">
+                    <a href={article.url} target="_blank" className="btn btn-secondary">
                       View Article
                     </a>
                     <button
-                      class="btn btn-danger"
+                      className="btn btn-danger"
                       onClick={() => this.deleteArticle(article._id)}
                     >
                       Remove from Saved

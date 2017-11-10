@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import API from "../utils/API";
 import SearchForm from "./SearchForm";
 import Results from "./Results";
@@ -40,15 +39,15 @@ class Search extends Component {
   }
 
   handleSave = (article) => {
-    let imgUrl = "";
+    let imageUrl = "";
     if (article.multimedia[0]) {
-      const imageUrl = "http://www.nytimes.com/" + article.multimedia[0].url;
+      imageUrl = "http://www.nytimes.com/" + article.multimedia[0].url;
     }
     API.saveArticle({
       title: article.headline.main,
       date: article.pub_date,
       author: article.byline.original,
-      imgUrl: imgUrl,
+      imgUrl: imageUrl,
       url: article.web_url,
       snippet: article.snippet
     });
@@ -57,11 +56,11 @@ class Search extends Component {
   render() {
     return (
       <div>
-        <div class="card">
-          <div class="card-header">
+        <div className="card">
+          <div className="card-header">
             Search
           </div>
-          <div class="card-body">
+          <div className="card-body">
             <SearchForm
               handleSearchChange={this.handleSearchChange}
               handleStartDateChange={this.handleStartDateChange}
@@ -70,8 +69,8 @@ class Search extends Component {
             />
           </div>
         </div>
-        <div class="card">
-          <div class="card-header">
+        <div className="card">
+          <div className="card-header">
             Search Results
           </div>
           <Results

@@ -6,13 +6,13 @@ const Results = (props) => {
       {
         props.results.map(article => {
           return (
-            <div class="card-body">
-              <div class="row">
-                <div class="col-sm-2">
-                  <img alt="no-image" src={article.multimedia[0] ? "http://www.nytimes.com/" + article.multimedia[0].url : ""}/>
+            <div key={article._id} className="card-body">
+              <div className="row">
+                <div className="col-sm-2">
+                  <img alt="none" src={article.multimedia[0] ? "http://www.nytimes.com/" + article.multimedia[0].url : ""}/>
                 </div>
-                <div class="col-sm-10">
-                  <h4 class="card-title">
+                <div className="col-sm-10">
+                  <h4 className="card-title">
                     {article.headline.main}
                   </h4>
                   <h6>
@@ -24,11 +24,11 @@ const Results = (props) => {
                   <p>
                     {article.snippet}
                   </p>
-                  <a href={article.web_url} target="_blank" class="btn btn-secondary">
+                  <a href={article.web_url} target="_blank" className="btn btn-secondary">
                     View Article
                   </a>
                   <button 
-                    class="btn btn-success"
+                    className="btn btn-success"
                     onClick={() => props.handleSave(article)}
                   >
                     Save Article
