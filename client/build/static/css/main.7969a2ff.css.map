@@ -1,0 +1,1 @@
+{"version":3,"sources":["style.css"],"names":[],"mappings":"AAAA,MACE,iBAAmB,CAGrB,KACE,eAAiB,CAGnB,IACE,UAAW","file":"static/css/main.7969a2ff.css","sourcesContent":[".card {\n  margin-bottom: 3vh;\n}\n\n.btn {\n  margin: 0 1% 0 0;\n}\n\nimg {\n  width:100%;\n}\n\n\n// WEBPACK FOOTER //\n// ./src/style.css"],"sourceRoot":""}
